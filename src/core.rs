@@ -16,7 +16,7 @@ pub enum TransactionType {
 pub enum TransactionStatus {
     Normal,
     Disputed,
-    Solved(bool),
+    Solved(bool), // true if chargeback occurred
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -216,6 +216,7 @@ impl User {
                 // disputed or chargebacked deposits are not available
                 _ => acc,
             })
+            .max(0) // ensures amount >= 0
     }
 
     fn held(&self) -> i32 {
