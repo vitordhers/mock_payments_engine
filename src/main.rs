@@ -45,6 +45,7 @@ fn main() -> Result<(), AppError> {
     }
 
     writeln!(handle, "{}", User::csv_header())?;
+    // since on output, client_id order is irrelevant, we're able to iterate over hashmap's values
     for client in mock_db.values() {
         writeln!(handle, "{}", client.to_csv_row())?;
     }
