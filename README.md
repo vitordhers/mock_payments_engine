@@ -1,4 +1,4 @@
-# Payments Engine
+# Mock Payments Engine
 
 A Rust implementation of a **mock payments engine** as requested in take-home challenge.
 The engine processes transactions from a CSV input stream, updates client accounts according to defined business rules, and outputs final account states as a CSV to **stdout**.
@@ -186,6 +186,11 @@ cargo run -- sample_data.csv
 ```
 
 ---
+
+### AI tools usage
+
+In order to speed up development, *ChatGPT* was used, majorly for writing boilerplate bits (such as **error** module), write this **.md** description (which has been checked, naturally), and simulating values for tests on **transaction.csv** files.
+Apart from that, it was also used for refining understanding on how certain aspects of the code work under the hood (especially **csv** library buffer processing), and validating functions logic (which was reviewed).
 
 **Author:** Vitor
 **License:** MIT
